@@ -12,6 +12,7 @@
         <module>gemini-service</module>
         <module>gemini-main</module>
         <module>gemini-common</module>
+        <module>gemini-schedule</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -9,18 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>gemini-main</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>gemini-schedule</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>cn.acyou</groupId>
             <artifactId>gemini-service</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.acyou</groupId>
-            <artifactId>gemini-schedule</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

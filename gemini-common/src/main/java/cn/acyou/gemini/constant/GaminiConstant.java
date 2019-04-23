@@ -26,6 +26,9 @@ public class GaminiConstant {
 
     public static final String SECURITIES_TIMES_HS_A = "securities_times_hs_a_";
 
+    public static final String MUTUAL_MARKET_SH = "mutual_market_sh_";
+    public static final String MUTUAL_MARKET_SZ = "mutual_market_sz_";
+
 
 
 }

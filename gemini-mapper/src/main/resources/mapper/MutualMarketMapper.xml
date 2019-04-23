@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.acyou.gemini.mapper.MutualMarketMapper">
+
+    <sql id="Base_Column">
+        id, code, name, column_one, column_two
+    </sql>
+
+    <insert id="insertBatch">
+        insert into ${tableName} (code, name, column_one, column_two) values
+        <foreach collection="hushenAList" item="item" index="index" separator=",">
+            (#{item.code},
+            #{item.name},
+            #{item.columnOne},
+            #{item.columnTwo})
+        </foreach>
+    </insert>
+
+</mapper>

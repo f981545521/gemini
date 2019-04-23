@@ -4,12 +4,11 @@ import cn.acyou.gemini.constant.GaminiConstant;
 import cn.acyou.gemini.entity.Boss;
 import cn.acyou.gemini.mapper.BossMapper;
 import cn.acyou.gemini.mapper.ReptileMapper;
-import cn.acyou.gemini.mapper.SecuritiesTimesHuShenAMapper;
+import cn.acyou.gemini.reptile.processor.MutualMarketProcessor;
 import cn.acyou.gemini.reptile.processor.SecuritiesTimesHuShenAProcessor;
 import cn.acyou.gemini.util.DateUtil;
 import cn.acyou.gemini.util.ResultInfo;
 import lombok.extern.slf4j.Slf4j;
-import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +32,8 @@ public class DemoController {
     private ReptileMapper reptileMapper;
     @Autowired
     private SecuritiesTimesHuShenAProcessor huShenAProcessor;
+    @Autowired
+    private MutualMarketProcessor mutualMarketProcessor;
 
     @ResponseBody
     @RequestMapping("index")
@@ -56,4 +57,28 @@ public class DemoController {
             return ResultInfo.success("已经存在数据：" + count + "条");
         }
     }
+
+    @ResponseBody
+    @RequestMapping("start2")
+    public ResultInfo start2(){
+        String dateStr = "20180427";
+        String tableName = GaminiConstant.MUTUAL_MARKET_SH + dateStr;
+        List<String> exists = reptileMapper.checkTableExists(tableName);
+        if (exists.size() == 0){
+            reptileMapper.createMutualMarketTable(tableName);
+            mutualMarketProcessor.start("2018/04/27");
+            return ResultInfo.success("操作成功");
+        }else {
+            Long count = reptileMapper.getTableTotalCount(tableName);
+            return ResultInfo.success("已经存在数据：" + count + "条");
+        }
+    }
+    @ResponseBody
+    @RequestMapping("init")
+    public ResultInfo init(){
+        mutualMarketProcessor.init();
+        return ResultInfo.success("操作成功");
+    }
+
+
 }

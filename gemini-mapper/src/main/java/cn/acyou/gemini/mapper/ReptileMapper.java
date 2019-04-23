@@ -13,6 +13,13 @@ public interface ReptileMapper {
     void createSecuritiesTimesHSATable(@Param("suffix") String suffix);
 
     /**
+     *  披露易 滬股通及深股通持股紀錄按日查詢
+     *  上海： sh_
+     *  深圳： sz_
+     */
+    void createMutualMarketTable(@Param("tableName") String tableName);
+
+    /**
      * 检查表名是否存在
      * @param tableName 表名称
      * @return 表名列表

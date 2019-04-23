@@ -18,6 +18,6 @@ public class SecuritiesTimesService {
 
     @Scheduled(cron = "0 */30 * * * ?")
     public void hushenA(){
-        log.info("—————— 每5秒执行一次 ——————");
+        log.info("—————— 每30分钟执行一次 ——————");
     }
 }

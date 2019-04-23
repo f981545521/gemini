@@ -1,8 +1,6 @@
 package cn.acyou.gemini.controller;
 
 import cn.acyou.gemini.constant.GaminiConstant;
-import cn.acyou.gemini.entity.Boss;
-import cn.acyou.gemini.mapper.BossMapper;
 import cn.acyou.gemini.mapper.ReptileMapper;
 import cn.acyou.gemini.reptile.processor.MutualMarketProcessor;
 import cn.acyou.gemini.reptile.processor.SecuritiesTimesHuShenAProcessor;
@@ -25,9 +23,6 @@ import java.util.List;
 @Slf4j
 @RequestMapping("demo")
 public class DemoController {
-
-    @Autowired
-    private BossMapper bossMapper;
     @Autowired
     private ReptileMapper reptileMapper;
     @Autowired
@@ -35,13 +30,6 @@ public class DemoController {
     @Autowired
     private MutualMarketProcessor mutualMarketProcessor;
 
-    @ResponseBody
-    @RequestMapping("index")
-    public List<Boss> index(){
-        List<Boss> bosses = bossMapper.selectList(null);
-        bosses.forEach(x-> log.info(x.toString()));
-        return bosses;
-    }
     @ResponseBody
     @RequestMapping("start")
     public ResultInfo start(){

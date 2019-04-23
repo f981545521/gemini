@@ -6,7 +6,6 @@ import java.math.BigDecimal;
 /**
  * @author youfang
  * @version [1.0.0, 2019-04-22 下午 07:23]
- * @since [司法公证]
  **/
 public class SecuritiesTimesHuShenA implements Serializable {
     private static final long serialVersionUID = 1396827733034934764L;

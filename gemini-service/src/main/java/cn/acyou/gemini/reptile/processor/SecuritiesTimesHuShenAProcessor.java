@@ -36,14 +36,7 @@ public class SecuritiesTimesHuShenAProcessor implements PageProcessor {
      */
     @Override
     public void process(Page page) {
-        /**
-         * 部分二：定义如何抽取页面信息，并保存下来
-         *
-         * get()		返回一条String类型的结果				String link= html.links().get()
-         * toString()	功能同get()，返回一条String类型的结果	String link= html.links().toString()
-         * all()		返回所有抽取结果						List links= html.links().all()
-         * match()		是否有匹配结果						if (html.links().match()){ xxx; }
-         */
+
         //代码
         List<String> code = page.getHtml().xpath("//*[@id=\"main\"]/div[1]/div[2]/table/tbody/tr/td[1]/text()").all();
         //简称

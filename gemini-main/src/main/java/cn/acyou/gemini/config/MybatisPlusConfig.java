@@ -40,8 +40,8 @@ public class MybatisPlusConfig {
         return scannerConfigurer;
     }
 
-    @Bean
-    @Profile({"dev"})
+    //@Bean
+    //@Profile({"dev"})
     public PerformanceInterceptor performanceInterceptor() {
         PerformanceInterceptor performanceInterceptor = new PerformanceInterceptor();
         performanceInterceptor.setMaxTime(100);

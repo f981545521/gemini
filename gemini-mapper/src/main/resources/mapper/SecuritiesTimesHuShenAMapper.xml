@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.acyou.gemini.mapper.SecuritiesTimesHuShenAMapper">
+
+    <sql id="Base_Column">
+        id, code, abbreviation, clinch_today, column_one, column_two, column_three, column_four
+    </sql>
+
+    <insert id="insertBatch">
+        insert into ${tableName} (code, abbreviation, clinch_today, column_one, column_two, column_three, column_four) values
+        <foreach collection="hushenAList" item="item" index="index" separator=",">
+            (#{item.code},
+            #{item.abbreviation},
+            #{item.clinchToday},
+            #{item.columnOne},
+            #{item.columnTwo},
+            #{item.columnThree},
+            #{item.columnFour})
+        </foreach>
+    </insert>
+
+</mapper>

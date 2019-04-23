@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.acyou.gemini.mapper.ReptileMapper">
+
+    <update id="createSecuritiesTimesHSATable">
+        CREATE TABLE securities_times_hs_a_${suffix} (
+            `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+            `code` varchar(100) COLLATE utf8mb4_bin NOT NULL COMMENT 'b、编码',
+            `abbreviation` varchar(255) COLLATE utf8mb4_bin NOT NULL COMMENT '简称',
+            `clinch_today` double(10,2) NOT NULL COMMENT '今日平均每笔成交(股)',
+            `column_one` double(10,2) DEFAULT NULL,
+            `column_two` double(10,2) DEFAULT NULL,
+            `column_three` double(10,2) DEFAULT NULL,
+            `column_four` double(10,2) DEFAULT NULL,
+            PRIMARY KEY (`id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+    </update>
+
+    <select id="checkTableExists"  resultType="java.lang.String">
+        SHOW TABLES LIKE '${tableName}'
+    </select>
+
+    <select id="getTableTotalCount" resultType="long">
+        SELECT COUNT(*) FROM ${tableName}
+    </select>
+
+</mapper>

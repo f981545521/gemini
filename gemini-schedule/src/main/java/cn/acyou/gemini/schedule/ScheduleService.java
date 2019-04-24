@@ -10,14 +10,19 @@ import org.springframework.stereotype.Component;
  **/
 @Slf4j
 @Component
-public class SecuritiesTimesService {
+public class ScheduleService {
 
-    public SecuritiesTimesService() {
-        log.info("SecuritiesTimesService 初始化");
+    public ScheduleService() {
+        log.info("ScheduleService 定时任务服务 ——————————> 初始化");
     }
 
     @Scheduled(cron = "0 */30 * * * ?")
     public void hushenA(){
         log.info("—————— 每30分钟执行一次 ——————");
+    }
+
+    @Scheduled(cron = "0/30 * * * * ?")
+    public void hushenB(){
+        log.info("—————— 每30秒执行一次 ——————");
     }
 }

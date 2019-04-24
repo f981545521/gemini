@@ -33,7 +33,7 @@ public class SecuritiesTimesHuShenAPipeline implements Pipeline {
 
     @Override
     public void process(ResultItems resultItems, Task task) {
-        String dateStr = DateUtil.getDateShortFormat(new Date());
+        String dateStr = DateUtil.getCurrentDateShortFormat();
         String tableName = GaminiConstant.SECURITIES_TIMES_HS_A + dateStr;
         Map<String, Object> allInfo = resultItems.getAll();
         System.out.println("数据量：" + allInfo.size() + "条");

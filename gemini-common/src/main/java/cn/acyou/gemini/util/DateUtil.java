@@ -14,12 +14,15 @@ public final class DateUtil {
     private DateUtil() {
     }
 
-    public static String getDateFormat(Date date) {
-        return getDateFormat(date, GaminiConstant.SPECIFIC_DATE_FORMAT_PATTERN);
+    public static String getCurrentDateFormat() {
+        return getDateFormat(new Date(), GaminiConstant.SPECIFIC_DATE_FORMAT_PATTERN);
+    }
+    public static String getCurrentDateFormat(String format) {
+        return getDateFormat(new Date(), format);
     }
 
-    public static String getDateShortFormat(Date date) {
-        return getDateFormat(date, GaminiConstant.SHORT_DATE_PATTERN);
+    public static String getCurrentDateShortFormat() {
+        return getDateFormat(new Date(), GaminiConstant.SHORT_DATE_PATTERN);
     }
 
     public static String getDateFormat(Date date, String format) {

@@ -33,7 +33,7 @@ public class DemoController {
     @ResponseBody
     @RequestMapping("start")
     public ResultInfo start(){
-        String dateStr = DateUtil.getDateShortFormat(new Date());
+        String dateStr = DateUtil.getCurrentDateShortFormat();
         String tableName = GaminiConstant.SECURITIES_TIMES_HS_A + dateStr;
         List<String> exists = reptileMapper.checkTableExists(tableName);
         if (exists.size() == 0){

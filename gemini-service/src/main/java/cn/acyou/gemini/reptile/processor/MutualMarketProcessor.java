@@ -116,9 +116,9 @@ public class MutualMarketProcessor implements PageProcessor {
         Map<String, Object> extras = new HashMap<>();
         extras.put("init", false);
         extras.put("txtShareholdingDate", dataStr);
-        extras.put("__VIEWSTATE", "/wEPDwUJNjIxMTYzMDAwZGQ79IjpLOM+JXdffc28A8BMMA9+yg==");
-        extras.put("__VIEWSTATEGENERATOR", "EC4ACD6F");
-        extras.put("__EVENTVALIDATION", "/wEdAAdtFULLXu4cXg1Ju23kPkBZVobCVrNyCM2j+bEk3ygqmn1KZjrCXCJtWs9HrcHg6Q64ro36uTSn/Z2SUlkm9HsG7WOv0RDD9teZWjlyl84iRMtpPncyBi1FXkZsaSW6dwqO1N1XNFmfsMXJasjxX85jz8PxJxwgNJLTNVe2Bh/bcg5jDf8=");
+        //extras.put("__VIEWSTATE", "/wEPDwUJNjIxMTYzMDAwZGQ79IjpLOM+JXdffc28A8BMMA9+yg==");
+        //extras.put("__VIEWSTATEGENERATOR", "EC4ACD6F");
+        //extras.put("__EVENTVALIDATION", "/wEdAAdtFULLXu4cXg1Ju23kPkBZVobCVrNyCM2j+bEk3ygqmn1KZjrCXCJtWs9HrcHg6Q64ro36uTSn/Z2SUlkm9HsG7WOv0RDD9teZWjlyl84iRMtpPncyBi1FXkZsaSW6dwqO1N1XNFmfsMXJasjxX85jz8PxJxwgNJLTNVe2Bh/bcg5jDf8=");
         extras.put("today", DateUtil.getCurrentDateShortFormat());
         extras.put("sortBy", "stockcode");
         extras.put("sortDirection", "asc");
